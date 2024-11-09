@@ -82,7 +82,7 @@ section {
     margin-bottom: 40px;
 }
 
-/* Table styling */
+/* Table styling for Business Metrics */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -94,16 +94,29 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
+th {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* Even rows with different background */
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/* Hover effect for rows */
 tr:hover {
-    background-color: #ddd; /* Add hover effect for rows */
+    background-color: #ddd;
+}
+
+/* Hover effect on table header */
+th:hover {
+    background-color: #45a049;
 }
 
 /* Chart container for Market Analysis page */
