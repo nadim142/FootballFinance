@@ -35,7 +35,7 @@ header {
 /* Fixed Navigation */
 nav {
     position: fixed;
-    top: 60px; /* Adjusts to make room below the header */
+    top: 100px; /* Adjusts to make room below the header */
     left: 0;
     width: 100%;
     background-color: #444;
