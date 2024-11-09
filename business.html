@@ -147,107 +147,7 @@
                         <td>$560 M</td>
                         <td>$140 M</td>
                     </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Juventus</td>
-                        <td>Italian Serie A</td>
-                        <td>Italy</td>
-                        <td>$2.05 B</td>
-                        <td>-5%</td>
-                        <td>$459 M</td>
-                        <td>$11 M</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Borussia Dortmund</td>
-                        <td>German Bundesliga</td>
-                        <td>Germany</td>
-                        <td>$1.98 B</td>
-                        <td>2%</td>
-                        <td>$441 M</td>
-                        <td>$75 M</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Atletico de Madrid</td>
-                        <td>Spanish La Liga</td>
-                        <td>Spain</td>
-                        <td>$1.6 B</td>
-                        <td>4%</td>
-                        <td>$382 M</td>
-                        <td>$20 M</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>AC Milan</td>
-                        <td>Italian Serie A</td>
-                        <td>Italy</td>
-                        <td>$1.43 B</td>
-                        <td>1%</td>
-                        <td>$405 M</td>
-                        <td>$81 M</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>LAFC</td>
-                        <td>MLS</td>
-                        <td>USA</td>
-                        <td>$1.2 B</td>
-                        <td>20%</td>
-                        <td>$140 M</td>
-                        <td>$9 M</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>West Ham United</td>
-                        <td>English Premier League</td>
-                        <td>England</td>
-                        <td>$1.1 B</td>
-                        <td>2%</td>
-                        <td>$289 M</td>
-                        <td>$66 M</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>Inter Miami</td>
-                        <td>MLS</td>
-                        <td>USA</td>
-                        <td>$1.03 B</td>
-                        <td>72%</td>
-                        <td>$118 M</td>
-                        <td>$8 M</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>Inter Milan</td>
-                        <td>Italian Serie A</td>
-                        <td>Italy</td>
-                        <td>$1 B</td>
-                        <td>-3%</td>
-                        <td>$398 M</td>
-                        <td>$39 M</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>LA Galaxy</td>
-                        <td>MLS</td>
-                        <td>USA</td>
-                        <td>$950 M</td>
-                        <td>3%</td>
-                        <td>$95 M</td>
-                        <td>$3 M</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>Atlanta United FC</td>
-                        <td>MLS</td>
-                        <td>USA</td>
-                        <td>$900 M</td>
-                        <td>6%</td>
-                        <td>$95 M</td>
-                        <td>$9 M</td>
-                    </tr>
-                    <!-- Add the remaining rows up to the 30th team -->
+                    <!-- Add remaining rows as needed -->
                 </tbody>
             </table>
         </section>
@@ -276,13 +176,17 @@
                     x = rows[i].getElementsByTagName("TD")[n];
                     y = rows[i + 1].getElementsByTagName("TD")[n];
 
+                    // Convert values into numbers for comparison
+                    let xValue = convertToNumber(x.innerHTML);
+                    let yValue = convertToNumber(y.innerHTML);
+
                     if (dir == "asc") {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        if (xValue > yValue) {
                             shouldSwitch = true;
                             break;
                         }
                     } else if (dir == "desc") {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        if (xValue < yValue) {
                             shouldSwitch = true;
                             break;
                         }
@@ -299,6 +203,17 @@
                         switching = true;
                     }
                 }
+            }
+        }
+
+        // Helper function to convert strings like "$6.6 B" into numbers
+        function convertToNumber(value) {
+            if (value.includes('B')) {
+                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e9;  // Convert to billions
+            } else if (value.includes('M')) {
+                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e6;  // Convert to millions
+            } else {
+                return parseFloat(value.replace(/[^\d.-]/g, ''));  // Handle plain numbers
             }
         }
     </script>
