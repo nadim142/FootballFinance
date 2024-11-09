@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Analysis | Football Finance Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Add Chart.js -->
 </head>
 <body>
     <!-- Fixed Header -->
@@ -19,4 +20,46 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="business.html">Business Metrics</a></li>
             <li><a href="player-financials.html">Player Financials</a></li>
-            <li><a href="sponsorships
+            <li><a href="sponsorships.html">Sponsorship Deals</a></li>
+            <li><a href="market-analysis.html">Market Analysis</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section id="market-trends">
+            <h2>Market Trends</h2>
+            <canvas id="marketChart"></canvas> <!-- Placeholder for the chart -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Football Finance Dashboard</p>
+    </footer>
+
+    <!-- JavaScript for Chart.js -->
+    <script>
+        const ctx = document.getElementById('marketChart').getContext('2d');
+        const marketChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020'], // Example years
+                datasets: [{
+                    label: 'Revenue Growth ($ Millions)',
+                    data: [500, 600, 700, 800, 900, 1100], // Example data for revenue
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
