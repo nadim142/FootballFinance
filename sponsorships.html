@@ -19,8 +19,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="business.html">Business Metrics</a></li>
             <li><a href="player-financials.html">Player Financials</a></li>
-            <li><a href="market-analysis.html">Market Analysis</a></li>
             <li><a href="sponsorships.html">Sponsorship Deals</a></li>
+            <li><a href="market-analysis.html">Market Analysis</a></li>
         </ul>
     </nav>
 
@@ -28,6 +28,7 @@
     <main>
         <section id="sponsorship-details">
             <h2>Sponsorship Deals</h2>
+            <input type="text" id="search-sponsorship" placeholder="Search by Brand or Club" />
             <table id="sponsorship-table">
                 <thead>
                     <tr>
@@ -46,11 +47,16 @@
                     </tr>
                     <tr>
                         <td>Pepsi</td>
-                        <td>Manchester City</td>
-                        <td>$75,000,000</td>
-                        <td>3 Years</td>
+                        <td>Manchester United</td>
+                        <td>$80,000,000</td>
+                        <td>4 Years</td>
                     </tr>
-                    <!-- Add more sponsorships here -->
+                    <tr>
+                        <td>Emirates</td>
+                        <td>Arsenal</td>
+                        <td>$120,000,000</td>
+                        <td>6 Years</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -60,5 +66,27 @@
     <footer>
         <p>&copy; 2024 Football Finance Dashboard</p>
     </footer>
+
+    <!-- JavaScript for Search Filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-sponsorship');
+            const sponsorshipTable = document.getElementById('sponsorship-table');
+            const rows = Array.from(sponsorshipTable.rows).slice(1); // Exclude header row
+
+            searchInput.addEventListener('input', () => {
+                const searchValue = searchInput.value.toLowerCase();
+                rows.forEach(row => {
+                    const brand = row.cells[0].textContent.toLowerCase();
+                    const club = row.cells[1].textContent.toLowerCase();
+                    if (brand.includes(searchValue) || club.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
