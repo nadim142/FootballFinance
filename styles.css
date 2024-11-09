@@ -1,3 +1,17 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background for testing */
+    color: #333;
+}
+
 /* Fixed Header */
 header {
     position: fixed;
@@ -18,7 +32,7 @@ nav {
     left: 0;
     width: 100%;
     background-color: #444;
-    z-index: 999; /* Makes sure nav stays above the content */
+    z-index: 999; /* Keeps the navigation above the content */
 }
 
 nav ul {
@@ -36,15 +50,29 @@ nav ul li {
 nav a {
     color: white;
     text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background-color: #666;
+    border-radius: 5px;
 }
 
 /* Main content area */
 main {
     padding-top: 120px; /* Adds padding to avoid content being hidden under the fixed header and nav */
     padding: 20px;
+    background-color: #fff; /* White background for content area */
 }
 
-/* Table and content styling */
+/* Section styling */
+section {
+    margin-bottom: 40px;
+}
+
+/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -64,6 +92,11 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+tr:hover {
+    background-color: #ddd; /* Add hover effect for rows */
+}
+
+/* Chart container for Market Analysis page */
 canvas {
     width: 100%;
     height: 400px;
@@ -75,4 +108,31 @@ footer {
     padding: 10px 0;
     background-color: #333;
     color: white;
+    margin-top: 20px;
+}
+
+/* Responsive Design: Ensure proper layout on small screens */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    header {
+        text-align: center;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
