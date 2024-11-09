@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Fixed Header -->
     <header>
         <h1>Football Finance Dashboard</h1>
@@ -27,35 +28,138 @@
     <!-- Main Content -->
     <main>
         <section id="business-metrics">
-            <h2>Club Financials</h2>
-            <p>Financial data for top football clubs.</p>
+            <h2>Top 20 Football Clubs by Revenue</h2>
+            <p>Based on Deloitte’s Football Money League, here are the top 20 football clubs with the highest revenue:</p>
+
             <table id="finance-table">
                 <thead>
                     <tr>
+                        <th>Rank</th>
                         <th>Club</th>
-                        <th>Revenue</th>
-                        <th>Expenses</th>
-                        <th>Net Profit</th>
+                        <th>Revenue (EUR)</th>
+                        <th>Profit (EUR)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Club A</td>
-                        <td>$500,000,000</td>
-                        <td>$400,000,000</td>
-                        <td>$100,000,000</td>
+                        <td>1</td>
+                        <td>Manchester City</td>
+                        <td>€731.4 million</td>
+                        <td>€32.5 million</td>
                     </tr>
                     <tr>
-                        <td>Club B</td>
-                        <td>$750,000,000</td>
-                        <td>$600,000,000</td>
-                        <td>$150,000,000</td>
+                        <td>2</td>
+                        <td>Real Madrid</td>
+                        <td>€714.9 million</td>
+                        <td>€13.2 million</td>
                     </tr>
                     <tr>
-                        <td>Club C</td>
-                        <td>$1,000,000,000</td>
-                        <td>$850,000,000</td>
-                        <td>$150,000,000</td>
+                        <td>3</td>
+                        <td>Bayern Munich</td>
+                        <td>€653.7 million</td>
+                        <td>€15.5 million</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Barcelona</td>
+                        <td>€640.0 million</td>
+                        <td>€-147.9 million</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Liverpool</td>
+                        <td>€619.0 million</td>
+                        <td>€5.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Manchester United</td>
+                        <td>€559.2 million</td>
+                        <td>€15.2 million</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Paris Saint-Germain</td>
+                        <td>€556.0 million</td>
+                        <td>€14.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Chelsea</td>
+                        <td>€531.7 million</td>
+                        <td>€-120.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Juventus</td>
+                        <td>€398.0 million</td>
+                        <td>€-77.5 million</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Tottenham Hotspur</td>
+                        <td>€442.0 million</td>
+                        <td>€5.1 million</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Arsenal</td>
+                        <td>€405.0 million</td>
+                        <td>€-10.2 million</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>AC Milan</td>
+                        <td>€366.0 million</td>
+                        <td>€11.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Borussia Dortmund</td>
+                        <td>€378.3 million</td>
+                        <td>€-37.1 million</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Inter Milan</td>
+                        <td>€353.0 million</td>
+                        <td>€9.3 million</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Roma</td>
+                        <td>€233.3 million</td>
+                        <td>€-11.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Atlético Madrid</td>
+                        <td>€331.1 million</td>
+                        <td>€1.8 million</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Everton</td>
+                        <td>€225.0 million</td>
+                        <td>€-10.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Lyon</td>
+                        <td>€230.0 million</td>
+                        <td>€-17.5 million</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Wolfsburg</td>
+                        <td>€250.0 million</td>
+                        <td>€5.0 million</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Leicester City</td>
+                        <td>€232.5 million</td>
+                        <td>€6.5 million</td>
                     </tr>
                 </tbody>
             </table>
@@ -66,5 +170,7 @@
     <footer>
         <p>&copy; 2024 Football Finance Dashboard</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
