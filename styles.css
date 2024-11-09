@@ -7,9 +7,16 @@
 
 /* Body and background styling */
 body {
+    font-size: 16px; /* Default font size for better readability */
+    line-height: 1.5;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; /* Light background for testing */
     color: #333;
+}
+
+/* Ensure the viewport scales properly on different devices */
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1.0";
 }
 
 /* Fixed Header */
@@ -113,6 +120,10 @@ footer {
 
 /* Responsive Design: Ensure proper layout on small screens */
 @media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Slightly smaller font size on small devices */
+    }
+
     nav ul li {
         display: block;
         margin: 10px 0;
