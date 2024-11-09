@@ -40,24 +40,27 @@ nav {
     width: 100%;
     background-color: #444;
     z-index: 999; /* Keeps the navigation above the content */
+    padding: 10px 0; /* Adds padding to make navigation links more spaced out */
+    text-align: center;
 }
 
+/* Navigation Links */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: inline-block;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 16px;
 }
 
@@ -124,13 +127,14 @@ footer {
         font-size: 14px; /* Slightly smaller font size on small devices */
     }
 
+    nav ul {
+        text-align: center;
+        padding: 0;
+    }
+
     nav ul li {
         display: block;
         margin: 10px 0;
-    }
-
-    nav {
-        text-align: center;
     }
 
     header {
