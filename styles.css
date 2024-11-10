@@ -255,3 +255,67 @@ nav ul li {
     margin: 0 15px;
 }
 
+/* Basic styles for mobile (less than 768px screen width) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;  /* Make font smaller for mobile */
+    }
+
+    header {
+        font-size: 18px; /* Adjust header font size */
+        padding: 10px 20px;  /* Adjust padding for header */
+    }
+
+    nav {
+        font-size: 16px;  /* Adjust nav links font size */
+        text-align: center;  /* Center navigation links */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    nav a {
+        display: block;  /* Stack nav links vertically */
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .container {
+        width: 100%;  /* Ensure the main container is full width */
+        padding: 10px;  /* Add padding */
+    }
+
+    table {
+        font-size: 12px;  /* Make table font smaller on mobile */
+        width: 100%;  /* Ensure table fits screen width */
+    }
+
+    /* For images, make sure they scale to fit the screen */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Add specific adjustments to other elements like footers, buttons, etc. */
+    footer {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+}
+
+/* Additional styles for even smaller screens (under 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;  /* Make text even smaller for very small screens */
+    }
+
+    header {
+        font-size: 16px;  /* Reduce header font size for tiny screens */
+    }
+
+    nav {
+        font-size: 14px;  /* Reduce font size in the navbar */
+    }
+
+    nav a {
+        padding: 8px;
+    }
+}
