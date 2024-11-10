@@ -164,3 +164,61 @@ footer {
         padding: 8px;
     }
 }
+/* Section Styling for Football Story */
+#football-story {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.fan-story {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.fan-story h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.fan-story p {
+    font-size: 1.1em;
+}
+
+form {
+    margin-top: 40px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
