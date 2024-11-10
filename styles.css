@@ -163,7 +163,26 @@ footer {
         font-size: 14px;
         padding: 8px;
     }
+
+    /* Ensure the layout is responsive */
+    .container {
+        width: 100%;  /* Ensure the main container is full width */
+        padding: 10px;  /* Add padding */
+    }
+
+    /* Make sure images scale properly */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust buttons for smaller screens */
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
 }
+
 /* Section Styling for Football Story */
 #football-story {
     margin: 40px auto;
@@ -222,6 +241,7 @@ form button {
 form button:hover {
     background-color: #45a049;
 }
+
 /* General Link Styling */
 nav a {
     color: #fff; /* Default link color is white */
@@ -242,66 +262,7 @@ nav a {
     border-radius: 5px;
 }
 
-/* Other styles for navigation */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-/* Basic styles for mobile (less than 768px screen width) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;  /* Make font smaller for mobile */
-    }
-
-    header {
-        font-size: 18px; /* Adjust header font size */
-        padding: 10px 20px;  /* Adjust padding for header */
-    }
-
-    nav {
-        font-size: 16px;  /* Adjust nav links font size */
-        text-align: center;  /* Center navigation links */
-        padding: 10px 0; /* Adjust padding */
-    }
-
-    nav a {
-        display: block;  /* Stack nav links vertically */
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-    .container {
-        width: 100%;  /* Ensure the main container is full width */
-        padding: 10px;  /* Add padding */
-    }
-
-    table {
-        font-size: 12px;  /* Make table font smaller on mobile */
-        width: 100%;  /* Ensure table fits screen width */
-    }
-
-    /* For images, make sure they scale to fit the screen */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Add specific adjustments to other elements like footers, buttons, etc. */
-    footer {
-        padding: 10px 0;
-        font-size: 12px;
-    }
-}
-
-/* Additional styles for even smaller screens (under 480px) */
+/* Additional styles for smaller screens (<480px) */
 @media (max-width: 480px) {
     body {
         font-size: 12px;  /* Make text even smaller for very small screens */
@@ -311,130 +272,6 @@ nav ul li {
         font-size: 16px;  /* Reduce header font size for tiny screens */
     }
 
-    nav {
-        font-size: 14px;  /* Reduce font size in the navbar */
-    }
-
-    nav a {
-        padding: 8px;
-    }
-    /* Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav {
-    background-color: #444;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px;
-    font-size: 16px;
-}
-
-nav a:hover {
-    background-color: #666;
-    border-radius: 5px;
-}
-
-footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-        padding: 0 10px; /* Add padding to prevent text from touching edges */
-    }
-
-    header {
-        padding: 15px;
-        font-size: 18px; /* Reduce header size */
-    }
-
-    nav {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 14px;
-    }
-
-    table {
-        width: 100%;
-        font-size: 12px;
-        border-collapse: collapse;
-    }
-
-    table, th, td {
-        border: 1px solid #ddd;
-    }
-
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    /* Images */
-    img {
-        max-width: 100%;
-        height: auto;  /* Ensure images scale correctly */
-    }
-
-    /* Footer fixes */
-    footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    /* Optional: Reduce button size for mobile */
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
-
-/* Even smaller screens (<480px) */
-@media (max-width: 480px) {
-    header {
-        font-size: 16px;  /* Make header even smaller on small phones */
-    }
-
     nav a {
         font-size: 12px;
         padding: 8px;
@@ -448,6 +285,4 @@ footer {
         font-size: 10px;
         padding: 8px;
     }
-}
-
 }
