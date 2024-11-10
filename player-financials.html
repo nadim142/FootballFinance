@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Financials | Football Finance Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
     <!-- Fixed Header -->
     <header>
         <h1>Football Finance Dashboard</h1>
-        <p>View salary data, transfer values, and career earnings of top football players.</p>
+        <p>Explore the financial data of top football players.</p>
     </header>
 
     <!-- Fixed Navigation -->
@@ -26,33 +29,87 @@
 
     <!-- Main Content -->
     <main>
-        <section id="player-stats">
-            <h2>Manchester City Player Financials</h2>
+        <section id="player-financials">
+            <h2>Top Football Players by Financial Value</h2>
+            <p>Click on a column header to sort the table based on player data:</p>
+
             <table id="player-financials-table">
                 <thead>
                     <tr>
-                        <th>Player</th>
-                        <th>Salary (per year)</th>
-                        <th>Market Value</th>
-                        <th>Transfer Fee</th>
-                        <th>Career Earnings (est.)</th>
+                        <th onclick="sortTable(0)">Rank</th>
+                        <th onclick="sortTable(1)">Player</th>
+                        <th onclick="sortTable(2)">Club</th>
+                        <th onclick="sortTable(3)">Country</th>
+                        <th onclick="sortTable(4)">Market Value (USD)</th>
+                        <th onclick="sortTable(5)">Yearly Wages (USD)</th>
+                        <th onclick="sortTable(6)">Sponsorships (USD)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Kevin De Bruyne</td>
-                        <td>$20,000,000</td>
-                        <td>$120,000,000</td>
-                        <td>$75,000,000</td>
-                        <td>$250,000,000</td>
+                        <td>1</td>
+                        <td>Lionel Messi</td>
+                        <td>Paris Saint-Germain</td>
+                        <td>Argentina</td>
+                        <td>$120 M</td>
+                        <td>$75 M</td> <!-- Messi's yearly wages -->
+                        <td>$35 M</td>
                     </tr>
                     <tr>
-                        <td>Erling Haaland</td>
-                        <td>$25,000,000</td>
-                        <td>$150,000,000</td>
-                        <td>$60,000,000</td>
-                        <td>$150,000,000</td>
+                        <td>2</td>
+                        <td>Cristiano Ronaldo</td>
+                        <td>Al Nassr</td>
+                        <td>Portugal</td>
+                        <td>$100 M</td>
+                        <td>$60 M</td>
+                        <td>$20 M</td>
                     </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Neymar Jr.</td>
+                        <td>Paris Saint-Germain</td>
+                        <td>Brazil</td>
+                        <td>$98 M</td>
+                        <td>$70 M</td>
+                        <td>$15 M</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Kylian Mbappé</td>
+                        <td>Paris Saint-Germain</td>
+                        <td>France</td>
+                        <td>$160 M</td>
+                        <td>$50 M</td>
+                        <td>$22 M</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mohamed Salah</td>
+                        <td>Liverpool</td>
+                        <td>Egypt</td>
+                        <td>$55 M</td>
+                        <td>$22 M</td>
+                        <td>$10 M</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Kevin De Bruyne</td>
+                        <td>Manchester City</td>
+                        <td>Belgium</td>
+                        <td>$85 M</td>
+                        <td>$27 M</td>
+                        <td>$10 M</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Erling Haaland</td>
+                        <td>Manchester City</td>
+                        <td>Norway</td>
+                        <td>$140 M</td>
+                        <td>$30 M</td>
+                        <td>$5 M</td>
+                    </tr>
+                    <!-- Add more players here as needed -->
                 </tbody>
             </table>
         </section>
@@ -62,5 +119,66 @@
     <footer>
         <p>&copy; 2024 Football Finance Dashboard</p>
     </footer>
+
+    <script>
+        // Sort function to sort the table by column
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("player-financials-table");
+            switching = true;
+            dir = "asc"; // Set the sorting direction to ascending initially
+
+            // Loop to keep switching until no switch is needed
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    // Convert values into numbers for comparison (handle USD values)
+                    let xValue = convertToNumber(x.innerHTML);
+                    let yValue = convertToNumber(y.innerHTML);
+
+                    if (dir == "asc") {
+                        if (xValue > yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (xValue < yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        // Helper function to convert strings like "$6.6 M" or "$120 M" into numbers
+        function convertToNumber(value) {
+            if (value.includes('B')) {
+                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e9;  // Convert to billions
+            } else if (value.includes('M')) {
+                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e6;  // Convert to millions
+            } else {
+                return parseFloat(value.replace(/[^\d.-]/g, ''));  // Handle plain numbers
+            }
+        }
+    </script>
 </body>
+
 </html>
