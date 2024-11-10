@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Story | Football Finance Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Fixed Header -->
+    <header>
+        <h1>Football Finance Dashboard</h1>
+        <p>Explore the financial data and personal stories of football fans around the world.</p>
+    </header>
+
+    <!-- Fixed Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="business.html">Business Metrics</a></li>
+            <li><a href="player-financials.html">Player Financials</a></li>
+            <li><a href="sponsorships.html">Sponsorship Deals</a></li>
+            <li><a href="market-analysis.html">Market Analysis</a></li>
+            <li><a href="football-story.html">Football Story</a></li> <!-- New Tab for Football Story -->
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section id="football-story">
+            <h2>Football Fans' Stories</h2>
+            <p>Discover the passion and love football fans have for their clubs from around the world.</p>
+            
+            <!-- Example Fan Story 1 -->
+            <article class="fan-story">
+                <h3>John's Story - A Liverpool Fan</h3>
+                <p><strong>Why I Love Football:</strong> "Football has been in my blood since I was a kid. Watching Liverpool win the Champions League was a dream come true!"</p>
+                <p><strong>Favorite Memory:</strong> "My favorite memory was when we won the 2019 Champions League. The feeling was unreal."</p>
+            </article>
+
+            <!-- Example Fan Story 2 -->
+            <article class="fan-story">
+                <h3>Maria's Story - A Barcelona Fan</h3>
+                <p><strong>Why I Love Football:</strong> "Barcelona has always been a part of my family. The club's values align with my own, and the passion is unmatched."</p>
+                <p><strong>Favorite Memory:</strong> "The 2009 Champions League final against Manchester United was unforgettable!"</p>
+            </article>
+
+            <!-- Form for submitting stories -->
+            <h3>Share Your Football Story</h3>
+            <form action="#" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="club">Your Club:</label>
+                <input type="text" id="club" name="club" required>
+
+                <label for="story">Why do you love football? Share your story:</label>
+                <textarea id="story" name="story" rows="4" required></textarea>
+
+                <label for="memory">What is your favorite memory with your club?</label>
+                <textarea id="memory" name="memory" rows="4" required></textarea>
+
+                <button type="submit">Submit Your Story</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Football Finance Dashboard</p>
+    </footer>
+
+</body>
+
+</html>
