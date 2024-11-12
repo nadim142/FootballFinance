@@ -50,7 +50,7 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Real Madrid</td>
+                        <td><a href="javascript:void(0);" onclick="showDetails('Real Madrid')">Real Madrid</a></td>
                         <td>Spanish La Liga</td>
                         <td>Spain</td>
                         <td>$6.6 B</td>
@@ -90,7 +90,7 @@
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td>Manchester City</td>
+                        <td><a href="javascript:void(0);" onclick="showDetails('Manchester City')">Manchester City</a></td>
                         <td>English Premier League</td>
                         <td>England</td>
                         <td>$5.1 B</td>
@@ -418,6 +418,11 @@
         }
     </script>
     <script src="script.js"></script>
+    <script>
+function showDetails(teamName) {
+    alert("More information about " + teamName + " will be displayed here.");
+}
+</script>
 </body>
 
 </html>
