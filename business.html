@@ -352,72 +352,19 @@
             </table>
         </section>
     </main>
-     <div id="teamDetails" style="display:none;">
+
+    <div id="teamDetails" style="display:none;">
         <h2 id="teamName">Team Details</h2>
         <div id="playerDetails"></div>
     </div>
-  <script>
-        // Sort function to sort the table by column
-        function sortTable(n) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("finance-table");
-            switching = true;
-            dir = "asc"; // Set the sorting direction to ascending initially
 
-            // Loop to keep switching until no switch is needed
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
-
-                    // Convert values into numbers for comparison
-                    let xValue = convertToNumber(x.innerHTML);
-                    let yValue = convertToNumber(y.innerHTML);
-
-                    if (dir == "asc") {
-                        if (xValue > yValue) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (dir == "desc") {
-                        if (xValue < yValue) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    switchcount++;
-                } else {
-                    if (switchcount == 0 && dir == "asc") {
-                        dir = "desc";
-                        switching = true;
-                    }
-                }
-            }
-        }
-
-        // Helper function to convert strings like "$6.6 B" into numbers
-        function convertToNumber(value) {
-            if (value.includes('B')) {
-                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e9;  // Convert to billions
-            } else if (value.includes('M')) {
-                return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e6;  // Convert to millions
-            } else {
-                return parseFloat(value.replace(/[^\d.-]/g, ''));  // Handle plain numbers
-            }
-        }
-        
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Football Finance Dashboard</p>
-    </footer>    
+    </footer>
+
+    <!-- JavaScript Files -->
     <script src="script.js"></script>
 </body>
+
 </html>
