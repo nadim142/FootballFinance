@@ -153,7 +153,6 @@ function toggleMobileNav() {
         <li><a href="football-story.html">Football Story</a></li>
     </ul>
 </div>
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     // Attach click event listeners to each team link
     document.querySelectorAll('.team-link').forEach(item => {
