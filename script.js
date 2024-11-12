@@ -154,25 +154,34 @@ function toggleMobileNav() {
     </ul>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Attach click event listeners to each team link
+    document.querySelectorAll('.team-link').forEach(item => {
+        item.addEventListener('click', function() {
+            const teamName = this.getAttribute('data-team');
+            showTeamDetails(teamName);
+        });
+    });
+});
+
 function showTeamDetails(teamName) {
     const teamDetails = document.getElementById('teamDetails');
     const teamNameHeader = document.getElementById('teamName');
     const playerDetails = document.getElementById('playerDetails');
 
-    // Example player data
+    // Define your data for each team
     const teams = {
         'Manchester City': [
             { name: 'Kevin De Bruyne', position: 'Midfielder', marketValue: '€100M' },
-            { name: 'Phil Foden', position: 'Midfielder', marketValue: '€80M' },
-            // Add more players
+            { name: 'Phil Foden', position: 'Midfielder', marketValue: '€80M' }
         ],
         'Real Madrid': [
             { name: 'Karim Benzema', position: 'Forward', marketValue: '€50M' },
-            { name: 'Vinicius Junior', position: 'Forward', marketValue: '€120M' },
-            // Add more players
+            { name: 'Vinicius Junior', position: 'Forward', marketValue: '€120M' }
         ]
     };
 
+    // Display details for the selected team
     if (teams[teamName]) {
         teamNameHeader.innerText = `${teamName} Players`;
         playerDetails.innerHTML = '';
@@ -182,11 +191,3 @@ function showTeamDetails(teamName) {
         teamDetails.style.display = 'block';
     }
 }
-
-// Optional: Close the details view when clicking outside
-window.onclick = function(event) {
-    if (event.target === teamDetails) {
-        teamDetails.style.display = "none";
-    }
-}
-</script>
