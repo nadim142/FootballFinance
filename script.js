@@ -135,3 +135,28 @@ function sortTableByColumn(table, columnIndex) {
     // Append the sorted rows back to the table
     rows.forEach(row => table.appendChild(row));
 }
+<!-- Add this button for the hamburger menu in your HTML -->
+<button class="hamburger" onclick="toggleMobileNav()">☰</button>
+
+<!-- Mobile navigation (include this in the HTML where the mobile nav should appear) -->
+<div class="mobile-nav" id="mobileNav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="business.html">Business Metrics</a></li>
+        <li><a href="player-financials.html">Player Financials</a></li>
+        <li><a href="sponsorships.html">Sponsorship Deals</a></li>
+        <li><a href="market-analysis.html">Market Analysis</a></li>
+        <li><a href="football-story.html">Football Story</a></li>
+    </ul>
+</div>
+
+<script>
+    function toggleMobileNav() {
+        const nav = document.getElementById("mobileNav");
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "block";
+        }
+    }
+</script>
