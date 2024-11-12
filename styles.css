@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-size: 16px;
     line-height: 1.5;
@@ -36,10 +35,10 @@ header p {
     font-size: 1em;
 }
 
-/* Navigation */
+/* Navigation for Desktop */
 nav {
     position: fixed;
-    top: 75px; /* Positions navigation below the header */
+    top: 75px;
     left: 0;
     width: 100%;
     background-color: #444;
@@ -72,61 +71,68 @@ nav a:hover {
     border-radius: 5px;
 }
 
+/* Hide regular navigation and add hamburger icon on small screens */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Mobile Menu */
+.mobile-nav {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    z-index: 999;
+    text-align: center;
+}
+
+.mobile-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    padding: 10px 0;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Media Query for Tablets and Mobile */
+@media (max-width: 768px) {
+    /* Show hamburger icon and hide regular navigation */
+    .hamburger {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    .mobile-nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+}
+
 /* Main Content */
 main {
     padding-top: 150px; /* Allows space for fixed header and navigation */
     padding-left: 20px;
     padding-right: 20px;
     background-color: #fff;
-}
-
-/* Section styling */
-section {
-    margin-bottom: 40px;
-}
-
-/* Table Styling for Business Metrics */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 1em;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
-    text-align: center;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-
-/* Even rows with different background */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Hover effect for rows */
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Hover effect on table header */
-th:hover {
-    background-color: #45a049;
-}
-
-/* Chart container for Market Analysis page */
-canvas {
-    width: 100%;
-    height: 400px;
 }
 
 /* Footer */
@@ -138,80 +144,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Forms Styling */
-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
-
-/* Responsive Design for Tablets (up to 768px) */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.6em;
-    }
-    header p {
-        font-size: 0.9em;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    main {
-        padding-top: 160px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    table, th, td {
-        font-size: 0.9em;
-        padding: 10px;
-    }
-
-    form {
-        width: 90%;
-    }
-}
-
 /* Responsive Design for Mobile Devices (up to 480px) */
 @media (max-width: 480px) {
     header h1 {
@@ -220,34 +152,9 @@ form button:hover {
     header p {
         font-size: 0.8em;
     }
-
-    nav ul {
-        padding: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 8px 0;
-    }
-
     main {
-        padding-top: 180px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    table, th, td {
-        font-size: 0.8em;
-        padding: 8px;
-    }
-
-    form {
-        width: 100%;
-        padding: 15px;
-    }
-
-    footer {
-        font-size: 0.9em;
-        padding: 15px 0;
+        padding-top: 160px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
