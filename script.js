@@ -159,4 +159,37 @@ function sortTableByColumn(table, columnIndex) {
             nav.style.display = "block";
         }
     }
+    document.addEventListener("DOMContentLoaded", function() {
+    const newsArticles = [
+        {
+            title: "Champions League Highlights",
+            summary: "Catch up on last night’s thrilling matches and surprise upsets in the Champions League.",
+            link: "#"
+        },
+        {
+            title: "Transfer Market Rumors",
+            summary: "Top players are in the spotlight as teams gear up for the January transfer window.",
+            link: "#"
+        },
+        {
+            title: "Premier League Race Heats Up",
+            summary: "With only a few points separating the top teams, this season promises an exciting finish.",
+            link: "#"
+        }
+    ];
+
+    const newsContainer = document.getElementById("news-articles");
+
+    newsArticles.forEach(article => {
+        const articleDiv = document.createElement("div");
+        articleDiv.classList.add("news-article");
+
+        articleDiv.innerHTML = `
+            <h3><a href="${article.link}">${article.title}</a></h3>
+            <p>${article.summary}</p>
+        `;
+
+        newsContainer.appendChild(articleDiv);
+    });
+});
 </script>
