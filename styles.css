@@ -38,12 +38,12 @@ header p {
 /* Navigation for Desktop */
 nav {
     position: fixed;
-    top: 75px;
+    top: 75px; /* Places navigation below header */
     left: 0;
     width: 100%;
     background-color: #444;
     z-index: 999;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding for better readability */
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 20px; /* Space between links */
 }
 
 nav a {
@@ -71,7 +71,7 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Hide regular navigation and add hamburger icon on small screens */
+/* Mobile Navigation */
 .hamburger {
     display: none;
     position: fixed;
@@ -85,9 +85,8 @@ nav a:hover {
     z-index: 1001;
 }
 
-/* Mobile Menu */
 .mobile-nav {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 75px;
     left: 0;
@@ -112,7 +111,7 @@ nav a:hover {
     font-size: 1em;
 }
 
-/* Media Query for Tablets and Mobile */
+/* Responsive Design for Tablets and Mobile */
 @media (max-width: 768px) {
     /* Show hamburger icon and hide regular navigation */
     .hamburger {
