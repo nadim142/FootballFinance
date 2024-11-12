@@ -135,10 +135,14 @@ function sortTableByColumn(table, columnIndex) {
     // Append the sorted rows back to the table
     rows.forEach(row => table.appendChild(row));
 }
-<!-- Add this button for the hamburger menu in your HTML -->
+// Function to toggle the mobile navigation menu visibility
+function toggleMobileNav() {
+    const nav = document.getElementById("mobileNav");
+    nav.style.display = nav.style.display === "block" ? "none" : "block";
+}<!-- Hamburger Menu Button for Mobile -->
 <button class="hamburger" onclick="toggleMobileNav()">☰</button>
 
-<!-- Mobile navigation (include this in the HTML where the mobile nav should appear) -->
+<!-- Mobile Navigation Menu (hidden by default) -->
 <div class="mobile-nav" id="mobileNav">
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -149,14 +153,3 @@ function sortTableByColumn(table, columnIndex) {
         <li><a href="football-story.html">Football Story</a></li>
     </ul>
 </div>
-
-<script>
-    function toggleMobileNav() {
-        const nav = document.getElementById("mobileNav");
-        if (nav.style.display === "block") {
-            nav.style.display = "none";
-        } else {
-            nav.style.display = "block";
-        }
-    }
-</script>
