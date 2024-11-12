@@ -1,4 +1,50 @@
-// JavaScript for the Market Trends Chart (for the Market Analysis page)
+// Sample team data (this can be expanded as needed)
+const teamData = {
+    "Real Madrid": {
+        players: [
+            { name: "Karim Benzema", position: "Forward", marketValue: "€75M" },
+            { name: "Luka Modrić", position: "Midfielder", marketValue: "€10M" }
+        ],
+        info: "Real Madrid is a major Spanish football club based in Madrid."
+    },
+    "Manchester City": {
+        players: [
+            { name: "Kevin De Bruyne", position: "Midfielder", marketValue: "€100M" },
+            { name: "Phil Foden", position: "Midfielder", marketValue: "€80M" }
+        ],
+        info: "Manchester City FC is a top English football club based in Manchester."
+    }
+};
+
+// Function to load team data based on the URL parameter
+function loadTeamData() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const teamName = urlParams.get("team");
+
+    if (teamData[teamName]) {
+        document.getElementById("team-name").textContent = teamName;
+        
+        // Display team information if any
+        document.getElementById("team-content").innerHTML += `<p>${teamData[teamName].info}</p>`;
+
+        // Load players list
+        const playersList = document.getElementById("players-list");
+        playersList.innerHTML = ""; // Clear previous content
+
+        teamData[teamName].players.forEach(player => {
+            const playerDiv = document.createElement("div");
+            playerDiv.innerHTML = `<strong>${player.name}</strong> - ${player.position} - Market Value: ${player.marketValue}`;
+            playersList.appendChild(playerDiv);
+        });
+    } else {
+        document.getElementById("team-content").innerHTML = "<p>Team not found.</p>";
+    }
+}
+
+// Run this function if on team.html
+if (document.getElementById("team-content")) {
+    loadTeamData();
+}// JavaScript for the Market Trends Chart (for the Market Analysis page)
 const marketCtx = document.getElementById('marketChart')?.getContext('2d'); // Safely check if the element exists
 if (marketCtx) {
     const marketChart = new Chart(marketCtx, {
