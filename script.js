@@ -1,4 +1,50 @@
-// Sample team data (this can be expanded as needed)
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const team = urlParams.get("team");
+
+    const teamContent = {
+        "Real Madrid": {
+            title: "Real Madrid",
+            details: `
+                <h2>Real Madrid</h2>
+                <p>League: Spanish La Liga</p>
+                <p>Country: Spain</p>
+                <p>Current Value: $6.6 B</p>
+                <p>Revenue: $873 M</p>
+                <p>Operating Income: $76 M</p>
+                <h3>Top Players</h3>
+                <ul>
+                    <li>Karim Benzema - Forward - Market Value: €75M</li>
+                    <li>Vinícius Júnior - Forward - Market Value: €100M</li>
+                </ul>
+            `
+        },
+        "Manchester City": {
+            title: "Manchester City",
+            details: `
+                <h2>Manchester City</h2>
+                <p>League: English Premier League</p>
+                <p>Country: England</p>
+                <p>Current Value: $5.1 B</p>
+                <p>Revenue: $869 M</p>
+                <p>Operating Income: $147 M</p>
+                <h3>Top Players</h3>
+                <ul>
+                    <li>Kevin De Bruyne - Midfielder - Market Value: €100M</li>
+                    <li>Phil Foden - Midfielder - Market Value: €80M</li>
+                </ul>
+            `
+        }
+    };
+
+    const contentContainer = document.getElementById("teamContent");
+
+    if (teamContent[team]) {
+        contentContainer.innerHTML = teamContent[team].details;
+    } else {
+        contentContainer.innerHTML = `<p>Team data not available.</p>`;
+    }
+});// Sample team data (this can be expanded as needed)
 const teamData = {
     "Real Madrid": {
         players: [
