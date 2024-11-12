@@ -10,7 +10,294 @@ body {
     font-size: 16px; /* Default font size for better readability */
     line-height: 1.5;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background f/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background styling */
+body {
+    font-size: 16px; /* Default font size for better readability */
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4; /* Light background for testing */
+    color: #333;
+}
+
+/* Ensure the viewport scales properly on different devices */
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1.0";
+}
+
+/* Fixed Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 1000; /* Keeps the header above all other content */
+}
+
+/* Fixed Navigation */
+nav {
+    position: fixed;
+    top: 90px; /* Adjusts to make room below the header */
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    z-index: 999; /* Keeps the navigation above the content */
+    padding: 10px 0; /* Adds padding to make navigation links more spaced out */
+    text-align: center;
+}
+
+/* Navigation Links */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+/* Main content area */
+main {
+    padding-top: 250px; /* Adds padding to avoid content being hidden under the fixed header and nav */
+    padding: 200px;
+    background-color: #fff; /* White background for content area */
+}
+
+/* Section styling */
+section {
+    margin-bottom: 40px;
+}
+
+/* Table styling for Business Metrics */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* Even rows with different background */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Hover effect on table header */
+th:hover {
+    background-color: #45a049;
+}
+
+/* Chart container for Market Analysis page */
+canvas {
+    width: 100%;
+    height: 400px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive Design: Ensure proper layout on small screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Slightly smaller font size on small devices */
+    }
+
+    nav ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header {
+        text-align: center;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Ensure the layout is responsive */
+    .container {
+        width: 100%;  /* Ensure the main container is full width */
+        padding: 10px;  /* Add padding */
+    }
+
+    /* Make sure images scale properly */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust buttons for smaller screens */
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Section Styling for Football Story */
+#football-story {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.fan-story {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.fan-story h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.fan-story p {
+    font-size: 1.1em;
+}
+
+form {
+    margin-top: 40px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* General Link Styling */
+nav a {
+    color: #fff; /* Default link color is white */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+/* Blue Color for Football Story Navigation Link */
+.football-story-link {
+    color: blue; /* Set the text color to blue */
+}
+
+/* Hover Effect for Football Story Link */
+.football-story-link:hover {
+    background-color: #0066cc; /* Change background on hover */
+    color: white; /* Keep the text color white when hovered */
+    border-radius: 5px;
+}
+
+/* Additional styles for smaller screens (<480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;  /* Make text even smaller for very small screens */
+    }
+
+    header {
+        font-size: 16px;  /* Reduce header font size for tiny screens */
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 8px;
+    }
+}or testing */
     color: #333;
 }
 
