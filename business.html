@@ -352,11 +352,6 @@
             </table>
         </section>
     </main>
-<!-- Detail Section for Team Info -->
-<div id="TeamDetails" style="display:none;">
-    <h2 id="TeamName">Team Details</h2>
-    <div id="playerDetails">
-        <!-- Player details will be populated here -->
     </div>
 </div>
     <!-- Footer -->
@@ -422,12 +417,12 @@
                 return parseFloat(value.replace(/[^\d.-]/g, ''));  // Handle plain numbers
             }
         }
+        <div id="teamDetails" style="display:none;">
+    <h2 id="teamName">Team Details</h2>
+    <div id="playerDetails"></div>
+</div>
     </script>
-    <script src="script.js"></script>
-    <script>
-function showDetails(teamName) {
-    alert("More information about " + teamName + " will be displayed here.");
-}
+    <script src="script.js"></script>how
 </script>
 </body>
 
