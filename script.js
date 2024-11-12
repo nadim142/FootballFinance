@@ -135,14 +135,10 @@ function sortTableByColumn(table, columnIndex) {
     // Append the sorted rows back to the table
     rows.forEach(row => table.appendChild(row));
 }
-// Function to toggle the mobile navigation menu visibility
-function toggleMobileNav() {
-    const nav = document.getElementById("mobileNav");
-    nav.style.display = nav.style.display === "block" ? "none" : "block";
-}<!-- Hamburger Menu Button for Mobile -->
+<!-- Add this button for the hamburger menu in your HTML -->
 <button class="hamburger" onclick="toggleMobileNav()">☰</button>
 
-<!-- Mobile Navigation Menu (hidden by default) -->
+<!-- Mobile navigation (include this in the HTML where the mobile nav should appear) -->
 <div class="mobile-nav" id="mobileNav">
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -153,94 +149,14 @@ function toggleMobileNav() {
         <li><a href="football-story.html">Football Story</a></li>
     </ul>
 </div>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Attach click event listeners to each team link
-    document.querySelectorAll('.team-link').forEach(item => {
-        item.addEventListener('click', function() {
-            const teamName = this.getAttribute('data-team');
-            showTeamDetails(teamName);
-        });
-    });
-});
-
-function showTeamDetails(teamName) {
-    const teamDetails = document.getElementById('teamDetails');
-    const teamNameHeader = document.getElementById('teamName');
-    const playerDetails = document.getElementById('playerDetails');
-
-    // Define your data for each team
-    const teams = {
-        'Manchester City': [
-            { name: 'Kevin De Bruyne', position: 'Midfielder', marketValue: '€100M' },
-            { name: 'Phil Foden', position: 'Midfielder', marketValue: '€80M' }
-        ],
-        'Real Madrid': [
-            { name: 'Karim Benzema', position: 'Forward', marketValue: '€50M' },
-            { name: 'Vinicius Junior', position: 'Forward', marketValue: '€120M' }
-        ]
-    };
-
-    // Display details for the selected team
-    if (teams[teamName]) {
-        teamNameHeader.innerText = `${teamName} Players`;
-        playerDetails.innerHTML = '';
-        teams[teamName].forEach(player => {
-            playerDetails.innerHTML += `<p>${player.name}, ${player.position} - Market Value: ${player.marketValue}</p>`;
-        });
-        teamDetails.style.display = 'block';
-    }
-}
-// Sort function to sort the table by column
-function sortTable(n) {
-    const table = document.getElementById("finance-table");
-    let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    switching = true;
-    dir = "asc"; // Set the sorting direction to ascending initially
-
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-
-            let xValue = convertToNumber(x.innerHTML);
-            let yValue = convertToNumber(y.innerHTML);
-
-            if (dir == "asc") {
-                if (xValue > yValue) {
-                    shouldSwitch = true;
-                    break;
-                }
-            } else if (dir == "desc") {
-                if (xValue < yValue) {
-                    shouldSwitch = true;
-                    break;
-                }
-            }
-        }
-        if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount++;
+    function toggleMobileNav() {
+        const nav = document.getElementById("mobileNav");
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
         } else {
-            if (switchcount == 0 && dir == "asc") {
-                dir = "desc";
-                switching = true;
-            }
+            nav.style.display = "block";
         }
     }
-}
-
-// Helper function to convert strings like "$6.6 B" into numbers
-function convertToNumber(value) {
-    if (value.includes('B')) {
-        return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e9;  // Convert to billions
-    } else if (value.includes('M')) {
-        return parseFloat(value.replace(/[^\d.-]/g, '')) * 1e6;  // Convert to millions
-    } else {
-        return parseFloat(value.replace(/[^\d.-]/g, ''));  // Handle plain numbers
-    }
-}
+</script>
