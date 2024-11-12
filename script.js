@@ -153,3 +153,40 @@ function toggleMobileNav() {
         <li><a href="football-story.html">Football Story</a></li>
     </ul>
 </div>
+<script>
+function showTeamDetails(teamName) {
+    const teamDetails = document.getElementById('teamDetails');
+    const teamNameHeader = document.getElementById('teamName');
+    const playerDetails = document.getElementById('playerDetails');
+
+    // Example player data
+    const teams = {
+        'Manchester City': [
+            { name: 'Kevin De Bruyne', position: 'Midfielder', marketValue: '€100M' },
+            { name: 'Phil Foden', position: 'Midfielder', marketValue: '€80M' },
+            // Add more players
+        ],
+        'Real Madrid': [
+            { name: 'Karim Benzema', position: 'Forward', marketValue: '€50M' },
+            { name: 'Vinicius Junior', position: 'Forward', marketValue: '€120M' },
+            // Add more players
+        ]
+    };
+
+    if (teams[teamName]) {
+        teamNameHeader.innerText = `${teamName} Players`;
+        playerDetails.innerHTML = '';
+        teams[teamName].forEach(player => {
+            playerDetails.innerHTML += `<p>${player.name}, ${player.position} - Market Value: ${player.marketValue}</p>`;
+        });
+        teamDetails.style.display = 'block';
+    }
+}
+
+// Optional: Close the details view when clicking outside
+window.onclick = function(event) {
+    if (event.target === teamDetails) {
+        teamDetails.style.display = "none";
+    }
+}
+</script>
