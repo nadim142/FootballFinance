@@ -573,6 +573,37 @@ nav a {
         padding: 8px;
     }
 }
+    #current-news {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#current-news h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.news-article {
+    margin-bottom: 20px;
+}
+
+.news-article h3 a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.news-article h3 a:hover {
+    text-decoration: underline;
+}
+
+.news-article p {
+    color: #555;
+    font-size: 1em;
+}
 #teamDetails {
     position: fixed;
     background-color: white;
